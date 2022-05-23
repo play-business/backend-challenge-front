@@ -1,10 +1,9 @@
 import axios from 'axios';
 import env from "react-dotenv";
 
-const calculateTotals = (cash, wallet, paymentMethod) => {
-  return axios.post(env.API_URL, { cash, wallet, paymentMethod }, {
+const calculateTotals = (cash, wallet, paymentMethod, installments) => {
+  return axios.post(env.API_URL, { cash, wallet, paymentMethod, installments }, {
     headers: {
-      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
     },
   });

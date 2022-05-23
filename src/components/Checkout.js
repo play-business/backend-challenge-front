@@ -26,7 +26,9 @@ class Checkout extends React.Component {
     }
 
     this.setState(newState, () => {
-      calculateTotals(this.state.cash, this.state.wallet, this.state.paymentMethod).then(res => {
+      calculateTotals(
+        this.state.cash, this.state.wallet, this.state.paymentMethod, this.installments
+      ).then(res => {
         const {pbFee, paymentProcessorFee, taxes, total} = res.data;
 
         this.setState({pbFee, paymentProcessorFee, taxes, total});
@@ -39,6 +41,8 @@ class Checkout extends React.Component {
       <div>
         <Form
           cash={this.state.cash}
+          installments={this.state.installments}
+          paymentMethod={this.state.paymentMethod}
           wallet={this.state.wallet}
           setCheckoutProperty={(property, value) => this.setProperty(property, value)}/>
       </div>

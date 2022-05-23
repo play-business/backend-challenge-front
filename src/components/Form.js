@@ -26,6 +26,28 @@ class Form extends React.Component {
           onChange={(event) => this.props.setCheckoutProperty('wallet', parseInt(event.target.value))}
         />
       </div>
+      <div className="flex items-center">
+        <div>Método de pago</div>
+        <select
+          className="ml-4 flex-1"
+          onChange={(event) => this.props.setCheckoutProperty('paymentMethod', event.target.value)}
+        >
+          <option value="spei">SPEI</option>
+          <option value="card">Tarjeta de débito</option>
+        </select>
+      </div>
+      <div>
+        <div>Parcialidades: {this.props.installments}</div>
+        <input
+          type="range"
+          min="1"
+          max="4"
+          step="1"
+          className="w-full"
+          value={this.props.installments}
+          onChange={(event) => this.props.setCheckoutProperty('installments', parseInt(event.target.value))}
+        />
+      </div>
     </div>);
   }
 }
