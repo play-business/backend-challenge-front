@@ -1,7 +1,8 @@
 import axios from 'axios';
+import env from "react-dotenv";
 
 const calculateTotals = (cash, wallet, paymentMethod) => {
-  return axios.post('http://localhost:3001/url', { cash, wallet, paymentMethod }, {
+  return axios.post(env.API_URL, { cash, wallet, paymentMethod }, {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
