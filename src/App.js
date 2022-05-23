@@ -1,4 +1,5 @@
 import './App.css';
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <p className="text-gray-500 text-lg">
         React and Tailwind CSS in action
       </p>
+      <Checkout></Checkout>
     </div>
   );
 }
