@@ -9,8 +9,8 @@ class Form extends React.Component {
         <input
           type="range"
           min="0"
-          max="1000000"
-          step="100"
+          max="100000"
+          step="1000"
           className="w-full"
           onChange={(event) => this.props.setCheckoutProperty('cash', parseInt(event.target.value))}
         />
@@ -21,7 +21,7 @@ class Form extends React.Component {
           type="range"
           min="0"
           max={this.props.cash}
-          step="100"
+          step="1000"
           className="w-full"
           onChange={(event) => this.props.setCheckoutProperty('wallet', parseInt(event.target.value))}
         />
